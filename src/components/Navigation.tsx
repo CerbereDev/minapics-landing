@@ -17,16 +17,22 @@ export const Navigation = () => {
           
           <div className="hidden md:flex items-center gap-8">
             <button 
-              onClick={() => scrollToSection("portfolio")}
-              className="text-foreground/80 hover:text-foreground transition-colors"
-            >
-              Portfolio
-            </button>
-            <button 
               onClick={() => scrollToSection("services")}
               className="text-foreground/80 hover:text-foreground transition-colors"
             >
               Services
+            </button>
+            <button 
+              onClick={() => scrollToSection("pricing")}
+              className="text-foreground/80 hover:text-foreground transition-colors"
+            >
+              Pricing
+            </button>
+            <button 
+              onClick={() => scrollToSection("portfolio")}
+              className="text-foreground/80 hover:text-foreground transition-colors"
+            >
+              Portfolio
             </button>
             <button 
               onClick={() => scrollToSection("about")}
