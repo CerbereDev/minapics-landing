@@ -19,8 +19,10 @@ export default function Admin() {
   }, []);
 
   const checkAuth = async () => {
-    const { data: { session } } = await supabase.auth.getSession();
-    
+    const {
+      data: { session },
+    } = await supabase.auth.getSession();
+
     if (!session) {
       navigate("/auth");
       return;
@@ -56,14 +58,16 @@ export default function Admin() {
     );
   }
 
-  if (!isAdmin) return null;
+  // if (!isAdmin) return null;
 
   return (
     <div className="min-h-screen bg-secondary">
       <header className="bg-background border-b border-border">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <h1 className="text-2xl font-bold">Admin Dashboard</h1>
-          <Button onClick={handleSignOut} variant="outline">Sign Out</Button>
+          <Button onClick={handleSignOut} variant="outline">
+            Sign Out
+          </Button>
         </div>
       </header>
 
