@@ -23,10 +23,10 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 px-4">
+    <section id="contact" className="py-24 px-4 bg-secondary">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Get in Touch</h2>
+          <h2 className="text-5xl md:text-6xl font-calligraphy font-bold mb-4">Get in Touch</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Ready to capture your special moments? Let's discuss your photography needs
           </p>
@@ -39,7 +39,7 @@ export const Contact = () => {
                 <Mail className="w-6 h-6 text-accent" />
               </div>
               <div>
-                <h3 className="font-semibold text-lg mb-1">Email</h3>
+                <h3 className="font-calligraphy text-2xl mb-1">Email</h3>
                 <p className="text-muted-foreground">contact@photography.com</p>
               </div>
             </div>
@@ -49,7 +49,7 @@ export const Contact = () => {
                 <Phone className="w-6 h-6 text-accent" />
               </div>
               <div>
-                <h3 className="font-semibold text-lg mb-1">Phone</h3>
+                <h3 className="font-calligraphy text-2xl mb-1">Phone</h3>
                 <p className="text-muted-foreground">+1 (555) 123-4567</p>
               </div>
             </div>
@@ -59,7 +59,7 @@ export const Contact = () => {
                 <MapPin className="w-6 h-6 text-accent" />
               </div>
               <div>
-                <h3 className="font-semibold text-lg mb-1">Location</h3>
+                <h3 className="font-calligraphy text-2xl mb-1">Location</h3>
                 <p className="text-muted-foreground">New York, NY</p>
               </div>
             </div>
@@ -72,7 +72,7 @@ export const Contact = () => {
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 required
-                className="bg-secondary border-border"
+                className="bg-card border-border"
               />
             </div>
             <div>
@@ -82,7 +82,7 @@ export const Contact = () => {
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 required
-                className="bg-secondary border-border"
+                className="bg-card border-border"
               />
             </div>
             <div>
@@ -91,7 +91,7 @@ export const Contact = () => {
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 required
-                className="bg-secondary border-border min-h-[150px]"
+                className="bg-card border-border min-h-[150px]"
               />
             </div>
             <Button 

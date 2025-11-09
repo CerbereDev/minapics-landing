@@ -16,10 +16,10 @@ const portfolioItems = [
 
 export const Portfolio = () => {
   return (
-    <section id="portfolio" className="py-24 px-4 bg-secondary/30">
+    <section id="portfolio" className="py-24 px-4 bg-background">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Portfolio</h2>
+          <h2 className="text-5xl md:text-6xl font-calligraphy font-bold mb-4">Portfolio</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             A curated selection of our finest work, showcasing diverse styles and subjects
           </p>
@@ -37,7 +37,7 @@ export const Portfolio = () => {
                 alt={item.alt}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
           ))}
         </div>

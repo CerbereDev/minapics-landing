@@ -13,11 +13,11 @@ export const Hero = () => {
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/85 to-background" />
       </div>
       
       <div className="relative z-10 container mx-auto px-4 text-center">
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-in">
+        <h1 className="text-6xl md:text-7xl lg:text-8xl font-calligraphy font-bold mb-6 animate-fade-in leading-tight">
           Capturing Life's
           <span className="block text-accent mt-2">Precious Moments</span>
         </h1>
