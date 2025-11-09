@@ -15,7 +15,7 @@ export default function Admin() {
   const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
-    checkAuth();
+    // checkAuth();
   }, []);
 
   const checkAuth = async () => {
