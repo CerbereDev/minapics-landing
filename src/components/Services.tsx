@@ -1,33 +1,38 @@
-import { Camera, Users, Briefcase, Mountain, Palette, Heart } from "lucide-react";
+import serviceWeddings from "@/assets/service-weddings.jpg";
+import servicePortraits from "@/assets/service-portraits.jpg";
+import serviceCorporate from "@/assets/service-corporate.jpg";
+import serviceLandscape from "@/assets/service-landscape.jpg";
+import serviceProduct from "@/assets/service-product.jpg";
+import serviceEvents from "@/assets/service-events.jpg";
 
 const services = [
   {
-    icon: Heart,
+    image: serviceWeddings,
     title: "Weddings",
     description: "Romantic and timeless wedding photography that captures every precious moment of your special day.",
   },
   {
-    icon: Users,
+    image: servicePortraits,
     title: "Portraits",
     description: "Professional portrait sessions that reveal the unique personality and beauty of every subject.",
   },
   {
-    icon: Briefcase,
+    image: serviceCorporate,
     title: "Corporate",
     description: "High-quality corporate headshots and commercial photography for businesses and brands.",
   },
   {
-    icon: Mountain,
+    image: serviceLandscape,
     title: "Landscape",
     description: "Breathtaking landscape photography that showcases the natural beauty of the world around us.",
   },
   {
-    icon: Palette,
+    image: serviceProduct,
     title: "Product",
     description: "Creative product photography that highlights the unique features and quality of your merchandise.",
   },
   {
-    icon: Camera,
+    image: serviceEvents,
     title: "Events",
     description: "Comprehensive event coverage capturing the energy and emotion of your special occasions.",
   },
@@ -45,22 +50,26 @@ export const Services = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => {
-            const Icon = service.icon;
-            return (
-              <div
-                key={service.title}
-                className="bg-card border border-border rounded-lg p-8 hover:shadow-lg transition-all duration-300 animate-fade-in shadow-sm"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
-                  <Icon className="w-6 h-6 text-accent" />
-                </div>
+          {services.map((service, index) => (
+            <div
+              key={service.title}
+              className="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 animate-fade-in shadow-sm group"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+              </div>
+              <div className="p-6">
                 <h3 className="text-3xl font-calligraphy font-bold mb-2">{service.title}</h3>
                 <p className="text-muted-foreground">{service.description}</p>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </div>
     </section>
