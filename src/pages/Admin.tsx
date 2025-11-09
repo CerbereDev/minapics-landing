@@ -11,8 +11,8 @@ import { ContactManager } from "@/components/admin/ContactManager";
 
 export default function Admin() {
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(true);
-  const [isAdmin, setIsAdmin] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(true);
 
   useEffect(() => {
     // checkAuth();
