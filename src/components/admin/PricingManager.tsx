@@ -8,7 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Pencil, Trash2 } from "lucide-react";
+import { Pencil, Trash2, Plus } from "lucide-react";
 
 interface PricingPlan {
   id: string;
@@ -147,17 +147,24 @@ export function PricingManager() {
   if (loading) return <p>Loading...</p>;
 
   return (
-    <Card>
-      <CardHeader className="flex flex-row items-center justify-between">
-        <CardTitle>Pricing Management</CardTitle>
-        <Dialog>
-          <DialogTrigger asChild>
-            <Button onClick={() => {
-              setEditingPlan(null);
-              setFormData({ name: "", description: "", price: "", features: "", category: "wedding", popular: false, notes: "" });
-            }}>Add Plan</Button>
-          </DialogTrigger>
-          <DialogContent className="max-h-[90vh] overflow-y-auto">
+    <Card className="border-0 shadow-sm bg-white dark:bg-slate-950">
+      <CardHeader className="space-y-1 pb-4">
+        <div className="flex items-center justify-between">
+          <div>
+            <CardTitle className="text-2xl font-semibold text-slate-900 dark:text-white">Pricing Plans</CardTitle>
+            <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">Manage your pricing packages</p>
+          </div>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button onClick={() => {
+                setEditingPlan(null);
+                setFormData({ name: "", description: "", price: "", features: "", category: "wedding", popular: false, notes: "" });
+              }} className="gap-2">
+                <Plus className="w-4 h-4" />
+                Add Plan
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="max-h-[90vh] overflow-y-auto">
             <DialogHeader>
               <DialogTitle>{editingPlan ? "Edit Plan" : "Add Plan"}</DialogTitle>
             </DialogHeader>
@@ -232,21 +239,30 @@ export function PricingManager() {
               </Button>
             </form>
           </DialogContent>
-        </Dialog>
+          </Dialog>
+        </div>
       </CardHeader>
       <CardContent>
-        <div className="space-y-4">
-          {plans.map((plan) => (
-            <div key={plan.id} className="p-4 border border-border rounded-lg">
-              <div className="flex items-start justify-between">
-                <div className="flex-1">
-                  <h3 className="font-bold">{plan.name} {plan.popular && <span className="text-xs bg-accent text-accent-foreground px-2 py-1 rounded">Popular</span>}</h3>
-                  <p className="text-sm text-muted-foreground">{plan.description}</p>
-                  <p className="font-semibold mt-2">{plan.price}</p>
-                  <p className="text-xs text-muted-foreground mt-1">Category: {plan.category}</p>
-                  {plan.notes && <p className="text-xs italic mt-2">{plan.notes}</p>}
-                </div>
-                <div className="flex gap-2">
+        {plans.length === 0 ? (
+          <div className="text-center py-12 text-slate-500 dark:text-slate-400">
+            <p>No pricing plans yet. Add your first plan above.</p>
+          </div>
+        ) : (
+          <div className="space-y-3">
+            {plans.map((plan) => (
+              <div key={plan.id} className="p-5 border border-slate-200 dark:border-slate-800 rounded-lg hover:border-slate-300 dark:hover:border-slate-700 transition-colors">
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <h3 className="font-semibold text-slate-900 dark:text-white">{plan.name}</h3>
+                      {plan.popular && <span className="text-xs bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-2 py-1 rounded-full font-medium">Popular</span>}
+                    </div>
+                    <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">{plan.description}</p>
+                    <p className="font-semibold text-slate-900 dark:text-white mt-3">{plan.price}</p>
+                    <p className="text-xs text-slate-500 dark:text-slate-500 mt-1">Category: {plan.category}</p>
+                    {plan.notes && <p className="text-xs italic text-slate-600 dark:text-slate-400 mt-2">{plan.notes}</p>}
+                  </div>
+                  <div className="flex gap-2 flex-shrink-0">
                   <Dialog>
                     <DialogTrigger asChild>
                       <Button variant="outline" size="icon" onClick={() => openEditDialog(plan)}>
@@ -336,7 +352,8 @@ export function PricingManager() {
               </div>
             </div>
           ))}
-        </div>
+          </div>
+        )}
       </CardContent>
     </Card>
   );

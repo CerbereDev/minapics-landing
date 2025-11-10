@@ -7,7 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Pencil, Trash2 } from "lucide-react";
+import { Pencil, Trash2, Plus } from "lucide-react";
 
 interface Service {
   id: string;
@@ -157,17 +157,24 @@ export function ServicesManager() {
   if (loading) return <p>Loading...</p>;
 
   return (
-    <Card>
-      <CardHeader className="flex flex-row items-center justify-between">
-        <CardTitle>Services Management</CardTitle>
-        <Dialog>
-          <DialogTrigger asChild>
-            <Button onClick={() => {
-              setEditingService(null);
-              setFormData({ title: "", description: "", image: null });
-            }}>Add Service</Button>
-          </DialogTrigger>
-          <DialogContent>
+    <Card className="border-0 shadow-sm bg-white dark:bg-slate-950">
+      <CardHeader className="space-y-1 pb-4">
+        <div className="flex items-center justify-between">
+          <div>
+            <CardTitle className="text-2xl font-semibold text-slate-900 dark:text-white">Services</CardTitle>
+            <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">Manage your service offerings</p>
+          </div>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button onClick={() => {
+                setEditingService(null);
+                setFormData({ title: "", description: "", image: null });
+              }} className="gap-2">
+                <Plus className="w-4 h-4" />
+                Add Service
+              </Button>
+            </DialogTrigger>
+            <DialogContent>
             <DialogHeader>
               <DialogTitle>{editingService ? "Edit Service" : "Add Service"}</DialogTitle>
             </DialogHeader>
@@ -205,18 +212,24 @@ export function ServicesManager() {
               </Button>
             </form>
           </DialogContent>
-        </Dialog>
+          </Dialog>
+        </div>
       </CardHeader>
       <CardContent>
-        <div className="space-y-4">
-          {services.map((service) => (
-            <div key={service.id} className="flex items-start gap-4 p-4 border border-border rounded-lg">
-              <img src={service.image_url} alt={service.title} className="w-24 h-24 object-cover rounded" />
-              <div className="flex-1">
-                <h3 className="font-bold">{service.title}</h3>
-                <p className="text-sm text-muted-foreground">{service.description}</p>
-              </div>
-              <div className="flex gap-2">
+        {services.length === 0 ? (
+          <div className="text-center py-12 text-slate-500 dark:text-slate-400">
+            <p>No services yet. Add your first service above.</p>
+          </div>
+        ) : (
+          <div className="space-y-3">
+            {services.map((service) => (
+              <div key={service.id} className="flex items-start gap-4 p-4 border border-slate-200 dark:border-slate-800 rounded-lg hover:border-slate-300 dark:hover:border-slate-700 transition-colors">
+                <img src={service.image_url} alt={service.title} className="w-24 h-24 object-cover rounded-md border border-slate-200 dark:border-slate-800" />
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-semibold text-slate-900 dark:text-white">{service.title}</h3>
+                  <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">{service.description}</p>
+                </div>
+                <div className="flex gap-2 flex-shrink-0">
                 <Dialog>
                   <DialogTrigger asChild>
                     <Button variant="outline" size="icon" onClick={() => openEditDialog(service)}>
@@ -267,7 +280,8 @@ export function ServicesManager() {
               </div>
             </div>
           ))}
-        </div>
+          </div>
+        )}
       </CardContent>
     </Card>
   );

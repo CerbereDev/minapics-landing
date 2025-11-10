@@ -92,39 +92,48 @@ export function ContactManager() {
   if (loading) return <p>Loading...</p>;
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Contact Information Management</CardTitle>
+    <Card className="border-0 shadow-sm bg-white dark:bg-slate-950">
+      <CardHeader className="space-y-1 pb-4">
+        <div>
+          <CardTitle className="text-2xl font-semibold text-slate-900 dark:text-white">Contact Information</CardTitle>
+          <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">Update your contact details</p>
+        </div>
       </CardHeader>
       <CardContent>
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-5">
           <div>
-            <Label htmlFor="email">Email</Label>
+            <Label htmlFor="email" className="text-sm font-medium text-slate-900 dark:text-white">Email</Label>
             <Input
               id="email"
               type="email"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               required
+              className="mt-1.5"
+              placeholder="your@email.com"
             />
           </div>
           <div>
-            <Label htmlFor="phone">Phone</Label>
+            <Label htmlFor="phone" className="text-sm font-medium text-slate-900 dark:text-white">Phone</Label>
             <Input
               id="phone"
               type="tel"
               value={formData.phone}
               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
               required
+              className="mt-1.5"
+              placeholder="+1 (555) 123-4567"
             />
           </div>
           <div>
-            <Label htmlFor="location">Location</Label>
+            <Label htmlFor="location" className="text-sm font-medium text-slate-900 dark:text-white">Location</Label>
             <Input
               id="location"
               value={formData.location}
               onChange={(e) => setFormData({ ...formData, location: e.target.value })}
               required
+              className="mt-1.5"
+              placeholder="City, State, Country"
             />
           </div>
           <Button type="submit" disabled={saving} className="w-full">

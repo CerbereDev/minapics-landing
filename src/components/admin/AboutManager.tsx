@@ -145,103 +145,125 @@ export function AboutManager() {
   if (loading) return <p>Loading...</p>;
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>About Section Management</CardTitle>
+    <Card className="border-0 shadow-sm bg-white dark:bg-slate-950">
+      <CardHeader className="space-y-1 pb-4">
+        <div>
+          <CardTitle className="text-2xl font-semibold text-slate-900 dark:text-white">About Section</CardTitle>
+          <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">Manage your about page content</p>
+        </div>
       </CardHeader>
       <CardContent>
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-5">
           <div>
-            <Label htmlFor="title">Title</Label>
+            <Label htmlFor="title" className="text-sm font-medium text-slate-900 dark:text-white">Title</Label>
             <Input
               id="title"
               value={formData.title}
               onChange={(e) => setFormData({ ...formData, title: e.target.value })}
               required
+              className="mt-1.5"
             />
           </div>
           <div>
-            <Label htmlFor="subtitle">Subtitle</Label>
+            <Label htmlFor="subtitle" className="text-sm font-medium text-slate-900 dark:text-white">Subtitle</Label>
             <Input
               id="subtitle"
               value={formData.subtitle}
               onChange={(e) => setFormData({ ...formData, subtitle: e.target.value })}
               required
+              className="mt-1.5"
             />
           </div>
           <div>
-            <Label htmlFor="bio">Biography</Label>
+            <Label htmlFor="bio" className="text-sm font-medium text-slate-900 dark:text-white">Biography</Label>
             <Textarea
               id="bio"
               value={formData.bio}
               onChange={(e) => setFormData({ ...formData, bio: e.target.value })}
               required
               rows={5}
+              className="mt-1.5"
             />
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div>
-              <Label htmlFor="years">Years Experience</Label>
+              <Label htmlFor="years" className="text-sm font-medium text-slate-900 dark:text-white">Years Experience</Label>
               <Input
                 id="years"
                 type="number"
                 value={formData.years_experience}
                 onChange={(e) => setFormData({ ...formData, years_experience: parseInt(e.target.value) })}
                 required
+                className="mt-1.5"
               />
             </div>
             <div>
-              <Label htmlFor="clients">Happy Clients</Label>
+              <Label htmlFor="clients" className="text-sm font-medium text-slate-900 dark:text-white">Happy Clients</Label>
               <Input
                 id="clients"
                 type="number"
                 value={formData.happy_clients}
                 onChange={(e) => setFormData({ ...formData, happy_clients: parseInt(e.target.value) })}
                 required
+                className="mt-1.5"
               />
             </div>
             <div>
-              <Label htmlFor="awards">Awards</Label>
+              <Label htmlFor="awards" className="text-sm font-medium text-slate-900 dark:text-white">Awards</Label>
               <Input
                 id="awards"
                 type="number"
                 value={formData.awards}
                 onChange={(e) => setFormData({ ...formData, awards: parseInt(e.target.value) })}
                 required
+                className="mt-1.5"
               />
             </div>
             <div>
-              <Label htmlFor="projects">Projects</Label>
+              <Label htmlFor="projects" className="text-sm font-medium text-slate-900 dark:text-white">Projects</Label>
               <Input
                 id="projects"
                 type="number"
                 value={formData.projects}
                 onChange={(e) => setFormData({ ...formData, projects: parseInt(e.target.value) })}
                 required
+                className="mt-1.5"
               />
             </div>
           </div>
-          <div>
-            <Label htmlFor="portrait">Portrait Image {about && "(leave empty to keep current)"}</Label>
-            <Input
-              id="portrait"
-              type="file"
-              accept="image/*"
-              onChange={(e) => setFormData({ ...formData, portrait_image: e.target.files?.[0] || null })}
-              required={!about}
-            />
-            {about && <img src={about.portrait_image_url} alt="Current portrait" className="mt-2 w-32 h-32 object-cover rounded" />}
-          </div>
-          <div>
-            <Label htmlFor="working">Working Image {about && "(leave empty to keep current)"}</Label>
-            <Input
-              id="working"
-              type="file"
-              accept="image/*"
-              onChange={(e) => setFormData({ ...formData, working_image: e.target.files?.[0] || null })}
-              required={!about}
-            />
-            {about && <img src={about.working_image_url} alt="Current working" className="mt-2 w-32 h-32 object-cover rounded" />}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="space-y-3">
+              <Label htmlFor="portrait" className="text-sm font-medium text-slate-900 dark:text-white">Portrait Image {about && "(leave empty to keep current)"}</Label>
+              <Input
+                id="portrait"
+                type="file"
+                accept="image/*"
+                onChange={(e) => setFormData({ ...formData, portrait_image: e.target.files?.[0] || null })}
+                required={!about}
+                className="cursor-pointer"
+              />
+              {about && (
+                <div className="relative aspect-square rounded-lg overflow-hidden border border-slate-200 dark:border-slate-800">
+                  <img src={about.portrait_image_url} alt="Current portrait" className="w-full h-full object-cover" />
+                </div>
+              )}
+            </div>
+            <div className="space-y-3">
+              <Label htmlFor="working" className="text-sm font-medium text-slate-900 dark:text-white">Working Image {about && "(leave empty to keep current)"}</Label>
+              <Input
+                id="working"
+                type="file"
+                accept="image/*"
+                onChange={(e) => setFormData({ ...formData, working_image: e.target.files?.[0] || null })}
+                required={!about}
+                className="cursor-pointer"
+              />
+              {about && (
+                <div className="relative aspect-square rounded-lg overflow-hidden border border-slate-200 dark:border-slate-800">
+                  <img src={about.working_image_url} alt="Current working" className="w-full h-full object-cover" />
+                </div>
+              )}
+            </div>
           </div>
           <Button type="submit" disabled={saving} className="w-full">
             {saving ? "Saving..." : "Save About Section"}

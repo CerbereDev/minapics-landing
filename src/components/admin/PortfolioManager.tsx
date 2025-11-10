@@ -117,19 +117,18 @@ export function PortfolioManager() {
   if (loading) return <p>Loading...</p>;
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Portfolio Management</CardTitle>
-      </CardHeader>
-      <CardContent className="space-y-4">
-        <div>
+    <Card className="border-0 shadow-sm bg-white dark:bg-slate-950">
+      <CardHeader className="space-y-1 pb-4">
+        <div className="flex items-center justify-between">
+          <div>
+            <CardTitle className="text-2xl font-semibold text-slate-900 dark:text-white">Portfolio</CardTitle>
+            <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">Manage your portfolio images</p>
+          </div>
           <Label htmlFor="portfolio-upload">
-            <div className="flex items-center gap-2 cursor-pointer">
-              <Button type="button" disabled={uploading}>
-                <Plus className="w-4 h-4 mr-2" />
-                {uploading ? "Uploading..." : "Add Image"}
-              </Button>
-            </div>
+            <Button type="button" disabled={uploading} className="gap-2">
+              <Plus className="w-4 h-4" />
+              {uploading ? "Uploading..." : "Add Image"}
+            </Button>
           </Label>
           <Input
             id="portfolio-upload"
@@ -139,26 +138,35 @@ export function PortfolioManager() {
             className="hidden"
           />
         </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {items.map((item) => (
-            <div key={item.id} className="relative group">
-              <img
-                src={item.image_url}
-                alt={item.alt_text}
-                className="w-full h-32 object-cover rounded-lg"
-              />
-              <Button
-                variant="destructive"
-                size="icon"
-                className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity"
-                onClick={() => handleDelete(item.id, item.image_url)}
-              >
-                <Trash2 className="w-4 h-4" />
-              </Button>
-            </div>
-          ))}
-        </div>
+      </CardHeader>
+      <CardContent className="space-y-4">
+        {items.length === 0 ? (
+          <div className="text-center py-12 text-slate-500 dark:text-slate-400">
+            <p>No portfolio images yet. Add your first image above.</p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {items.map((item) => (
+              <div key={item.id} className="relative group aspect-square">
+                <img
+                  src={item.image_url}
+                  alt={item.alt_text}
+                  className="w-full h-full object-cover rounded-lg border border-slate-200 dark:border-slate-800"
+                />
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg flex items-center justify-center">
+                  <Button
+                    variant="destructive"
+                    size="icon"
+                    onClick={() => handleDelete(item.id, item.image_url)}
+                    className="shadow-lg"
+                  >
+                    <Trash2 className="w-4 h-4" />
+                  </Button>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
       </CardContent>
     </Card>
   );
