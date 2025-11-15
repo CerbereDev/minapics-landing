@@ -27,7 +27,7 @@ export const Hero = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in" style={{ animationDelay: "0.4s" }}>
           <Button 
             size="lg" 
-            className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-glow transition-all"
+            className="bg-accent text-white hover:bg-accent/90 shadow-[0_4px_12px_rgba(0,0,0,0.5)] hover:shadow-[0_6px_16px_rgba(0,0,0,0.6)] transition-all font-semibold"
             onClick={scrollToPortfolio}
           >
             View Portfolio
@@ -35,7 +35,7 @@ export const Hero = () => {
           <Button 
             size="lg" 
             variant="outline"
-            className="border-foreground/20 hover:bg-foreground/5"
+            className="border-2 border-white bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 shadow-[0_4px_12px_rgba(0,0,0,0.5)] font-semibold"
             onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
           >
             Get in Touch
