@@ -17,11 +17,11 @@ export const Hero = () => {
       </div>
       
       <div className="relative z-10 container mx-auto px-4 text-center">
-        <h1 className="text-6xl md:text-7xl lg:text-8xl font-calligraphy font-bold mb-6 animate-fade-in leading-tight">
-          Capturing Life's
-          <span className="block text-accent mt-2">Precious Moments</span>
+        <h1 className="text-6xl md:text-7xl lg:text-8xl font-calligraphy font-bold mb-6 animate-fade-in leading-tight text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+          Capturing Life&apos;s
+          <span className="block text-accent mt-2 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">Precious Moments</span>
         </h1>
-        <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: "0.2s" }}>
+        <p className="text-lg md:text-xl text-white mb-8 max-w-2xl mx-auto animate-fade-in drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]" style={{ animationDelay: "0.2s" }}>
           Professional photography that tells your unique story through stunning visual artistry
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in" style={{ animationDelay: "0.4s" }}>
