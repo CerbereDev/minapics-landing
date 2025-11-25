@@ -15,7 +15,7 @@ const Index = () => {
       <About />
       <Contact />
       <footer className="bg-secondary py-8 text-center text-muted-foreground border-t border-border">
-        <p>&copy; 2024 Professional Photography. All rights reserved.</p>
+        <p>&copy; 2024 Les Instants de Myriam. Tous droits réservés.</p>
       </footer>
     </main>
   );

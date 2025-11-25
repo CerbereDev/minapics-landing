@@ -16,8 +16,8 @@ export const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
-      title: "Message Sent!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
+      title: "Message Envoyé !",
+      description: "Merci de m'avoir contactée. Je vous répondrai bientôt.",
     });
     setFormData({ name: "", email: "", message: "" });
   };
@@ -26,9 +26,9 @@ export const Contact = () => {
     <section id="contact" className="py-24 px-4 bg-secondary">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-calligraphy font-bold mb-4">Get in Touch</h2>
+          <h2 className="text-5xl md:text-6xl font-calligraphy font-bold mb-4">Me Contacter</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Ready to capture your special moments? Let's discuss your photography needs
+            Prête à capturer vos moments spéciaux ? Discutons de vos besoins en photographie
           </p>
         </div>
         
@@ -49,7 +49,7 @@ export const Contact = () => {
                 <Phone className="w-6 h-6 text-accent" />
               </div>
               <div>
-                <h3 className="font-calligraphy text-2xl mb-1">Phone</h3>
+                <h3 className="font-calligraphy text-2xl mb-1">Téléphone</h3>
                 <p className="text-muted-foreground">+1 (555) 123-4567</p>
               </div>
             </div>
@@ -59,7 +59,7 @@ export const Contact = () => {
                 <MapPin className="w-6 h-6 text-accent" />
               </div>
               <div>
-                <h3 className="font-calligraphy text-2xl mb-1">Location</h3>
+                <h3 className="font-calligraphy text-2xl mb-1">Localisation</h3>
                 <p className="text-muted-foreground">New York, NY</p>
               </div>
             </div>
@@ -68,7 +68,7 @@ export const Contact = () => {
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <Input
-                placeholder="Your Name"
+                placeholder="Votre Nom"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 required
@@ -78,7 +78,7 @@ export const Contact = () => {
             <div>
               <Input
                 type="email"
-                placeholder="Your Email"
+                placeholder="Votre Email"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 required
@@ -87,7 +87,7 @@ export const Contact = () => {
             </div>
             <div>
               <Textarea
-                placeholder="Tell me about your photography needs..."
+                placeholder="Parlez-moi de vos besoins en photographie..."
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 required
@@ -98,7 +98,7 @@ export const Contact = () => {
               type="submit" 
               className="w-full bg-accent text-accent-foreground hover:bg-accent/90 shadow-glow bg-amber-50"
             >
-              Send Message
+              Envoyer le Message
             </Button>
           </form>
         </div>

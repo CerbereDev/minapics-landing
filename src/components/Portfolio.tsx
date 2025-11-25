@@ -40,7 +40,7 @@ export const Portfolio = () => {
         <div className="text-center mb-16">
           <h2 className="text-5xl md:text-6xl font-calligraphy font-bold mb-4">Portfolio</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            A curated selection of our finest work, showcasing diverse styles and subjects
+            Une sélection soignée de mes plus beaux travaux, présentant des styles et sujets variés
           </p>
         </div>
         
