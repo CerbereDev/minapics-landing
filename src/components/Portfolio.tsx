@@ -1,15 +1,16 @@
-import portfolio1 from "@/assets/portfolio-1.jpg";
-import portfolio2 from "@/assets/portfolio-2.jpg";
-import portfolio3 from "@/assets/portfolio-3.jpg";
-import portfolio4 from "@/assets/portfolio-4.jpg";
-import portfolio5 from "@/assets/portfolio-5.jpg";
-import portfolio6 from "@/assets/portfolio-6.jpg";
-import portfolio7 from "@/assets/portfolio-7.jpg";
-import portfolio8 from "@/assets/portfolio-8.jpg";
-import portfolio9 from "@/assets/portfolio-9.jpg";
-import portfolio10 from "@/assets/portfolio-10.jpg";
-import portfolio11 from "@/assets/portfolio-11.jpg";
-import portfolio12 from "@/assets/portfolio-12.jpg";
+import portfolio1 from "@/assets/portfolio_1.png";
+import portfolio2 from "@/assets/portfolio_2.png";
+import portfolio3 from "@/assets/portfolio_3.png";
+import portfolio4 from "@/assets/portfolio_4.png";
+import portfolio5 from "@/assets/portfolio_5.jpg";
+import portfolio6 from "@/assets/portfolio_6.jpg";
+import portfolio7 from "@/assets/portfolio_7.jpg";
+import portfolio8 from "@/assets/portfolio_8.jpg";
+import portfolio9 from "@/assets/portfolio_9.jpg";
+import portfolio10 from "@/assets/portfolio_10.jpg";
+import portfolio11 from "@/assets/portfolio_11.jpg";
+import portfolio12 from "@/assets/portfolio_12.jpg";
+import portfolio13 from "@/assets/portfolio_13.png";
 import {
   Carousel,
   CarouselContent,
@@ -31,6 +32,7 @@ const portfolioItems = [
   { src: portfolio10, alt: "Wedding bouquet and rings detail shot" },
   { src: portfolio11, alt: "Joyful wedding guests celebration" },
   { src: portfolio12, alt: "Romantic sunset couple silhouette" },
+  { src: portfolio13, alt: "Romantic sunset couple silhouette" },
 ];
 
 export const Portfolio = () => {
