@@ -6,8 +6,8 @@ import serviceWeddings from "@/assets/service-weddings.jpg";
 const servicesWithPricing = [
   {
     image: serviceWeddings,
-    title: "Weddings",
-    description: "Romantic and timeless wedding photography that captures every precious moment of your special day.",
+    title: "Mariages",
+    description: "Photographie de mariage romantique et intemporelle qui capture chaque moment précieux de votre journée spéciale.",
     packages: [
       {
         name: "After Day",
@@ -67,7 +67,7 @@ export const ServicesWithPricing = () => {
         <div className="text-center mb-16">
           <h2 className="text-5xl md:text-6xl font-calligraphy font-bold mb-4">Services & Tarifs</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Professional photography services with detailed pricing for your special moments
+            Services de photographie professionnelle avec tarifs détaillés pour vos moments spéciaux
           </p>
         </div>
         

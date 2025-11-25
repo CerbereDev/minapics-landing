@@ -26,7 +26,7 @@ export const Navigation = () => {
               onClick={() => scrollToSection("pricing")}
               className="text-foreground/80 hover:text-foreground transition-colors"
             >
-              Pricing
+              Tarifs
             </button>
             <button 
               onClick={() => scrollToSection("portfolio")}
@@ -38,7 +38,7 @@ export const Navigation = () => {
               onClick={() => scrollToSection("about")}
               className="text-foreground/80 hover:text-foreground transition-colors"
             >
-              About
+              À Propos
             </button>
             <Button 
               onClick={() => scrollToSection("contact")}

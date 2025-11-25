@@ -3,8 +3,8 @@ import serviceWeddings from "@/assets/service-weddings.jpg";
 const services = [
   {
     image: serviceWeddings,
-    title: "Weddings",
-    description: "Romantic and timeless wedding photography that captures every precious moment of your special day.",
+    title: "Mariages",
+    description: "Photographie de mariage romantique et intemporelle qui capture chaque moment précieux de votre journée spéciale.",
   }
 ];
 
@@ -13,9 +13,9 @@ export const Services = () => {
     <section id="services" className="py-24 px-4 bg-secondary">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-calligraphy font-bold mb-4">Our Services</h2>
+          <h2 className="text-5xl md:text-6xl font-calligraphy font-bold mb-4">Nos Services</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Professional photography services tailored to capture your most precious moments
+            Services de photographie professionnelle adaptés pour capturer vos moments les plus précieux
           </p>
         </div>
         
