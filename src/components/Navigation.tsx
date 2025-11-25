@@ -12,7 +12,7 @@ export const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-2 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
             <Camera className="w-6 h-6 text-accent" />
-            <span className="font-calligraphy font-bold text-2xl">Photography</span>
+            <span className="font-calligraphy font-bold text-2xl">Les Instants de Myriam</span>
           </div>
           
           <div className="hidden md:flex items-center gap-8">

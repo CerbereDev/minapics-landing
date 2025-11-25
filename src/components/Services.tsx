@@ -1,41 +1,11 @@
 import serviceWeddings from "@/assets/service-weddings.jpg";
-import servicePortraits from "@/assets/service-portraits.jpg";
-import serviceCorporate from "@/assets/service-corporate.jpg";
-import serviceLandscape from "@/assets/service-landscape.jpg";
-import serviceProduct from "@/assets/service-product.jpg";
-import serviceEvents from "@/assets/service-events.jpg";
 
 const services = [
   {
     image: serviceWeddings,
     title: "Weddings",
     description: "Romantic and timeless wedding photography that captures every precious moment of your special day.",
-  },
-  {
-    image: servicePortraits,
-    title: "Portraits",
-    description: "Professional portrait sessions that reveal the unique personality and beauty of every subject.",
-  },
-  {
-    image: serviceCorporate,
-    title: "Corporate",
-    description: "High-quality corporate headshots and commercial photography for businesses and brands.",
-  },
-  {
-    image: serviceLandscape,
-    title: "Landscape",
-    description: "Breathtaking landscape photography that showcases the natural beauty of the world around us.",
-  },
-  {
-    image: serviceProduct,
-    title: "Product",
-    description: "Creative product photography that highlights the unique features and quality of your merchandise.",
-  },
-  {
-    image: serviceEvents,
-    title: "Events",
-    description: "Comprehensive event coverage capturing the energy and emotion of your special occasions.",
-  },
+  }
 ];
 
 export const Services = () => {

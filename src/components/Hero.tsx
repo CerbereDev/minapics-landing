@@ -30,7 +30,7 @@ export const Hero = () => {
             className="bg-accent text-white hover:bg-accent/90 shadow-[0_4px_12px_rgba(0,0,0,0.5)] hover:shadow-[0_6px_16px_rgba(0,0,0,0.6)] transition-all font-semibold"
             onClick={scrollToPortfolio}
           >
-            View Portfolio
+            Mon Portfolio
           </Button>
           <Button 
             size="lg" 
@@ -38,7 +38,7 @@ export const Hero = () => {
             className="border-2 border-white bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 shadow-[0_4px_12px_rgba(0,0,0,0.5)] font-semibold"
             onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
           >
-            Get in Touch
+            Contactez Moi
           </Button>
         </div>
         

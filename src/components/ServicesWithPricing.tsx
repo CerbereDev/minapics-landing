@@ -2,11 +2,6 @@ import { Check } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import serviceWeddings from "@/assets/service-weddings.jpg";
-import servicePortraits from "@/assets/service-portraits.jpg";
-import serviceCorporate from "@/assets/service-corporate.jpg";
-import serviceLandscape from "@/assets/service-landscape.jpg";
-import serviceProduct from "@/assets/service-product.jpg";
-import serviceEvents from "@/assets/service-events.jpg";
 
 const servicesWithPricing = [
   {
@@ -58,102 +53,7 @@ const servicesWithPricing = [
         ]
       }
     ]
-  },
-  {
-    image: servicePortraits,
-    title: "Portraits",
-    description: "Professional portrait sessions that reveal the unique personality and beauty of every subject.",
-    packages: [
-      {
-        name: "Mommy Love",
-        price: "300€",
-        features: [
-          "Séance photo extérieure d'environ 2h",
-          "Minimum de 60 photos couleurs et noir et blanc",
-          "Photos travaillées en haute qualité",
-          "Remise sur clé USB dans un packaging prévu à cet effet"
-        ]
-      }
-    ]
-  },
-  {
-    image: serviceCorporate,
-    title: "Corporate",
-    description: "High-quality corporate headshots and commercial photography for businesses and brands.",
-    packages: [
-      {
-        name: "Corporate Package",
-        price: "Sur devis",
-        features: [
-          "Headshots professionnels",
-          "Photos d'équipe",
-          "Photos d'événements d'entreprise",
-          "Haute qualité et retouche professionnelle"
-        ]
-      }
-    ]
-  },
-  {
-    image: serviceLandscape,
-    title: "Landscape",
-    description: "Breathtaking landscape photography that showcases the natural beauty of the world around us.",
-    packages: [
-      {
-        name: "Landscape Session",
-        price: "Sur devis",
-        features: [
-          "Séances personnalisées",
-          "Photos haute résolution",
-          "Tirages disponibles",
-          "Droits d'utilisation inclus"
-        ]
-      }
-    ]
-  },
-  {
-    image: serviceProduct,
-    title: "Product",
-    description: "Creative product photography that highlights the unique features and quality of your merchandise.",
-    packages: [
-      {
-        name: "Product Photography",
-        price: "Sur devis",
-        features: [
-          "Photos de produits professionnelles",
-          "Mise en scène créative",
-          "Fond blanc ou mise en situation",
-          "Retouche et optimisation"
-        ]
-      }
-    ]
-  },
-  {
-    image: serviceEvents,
-    title: "Events",
-    description: "Comprehensive event coverage capturing the energy and emotion of your special occasions.",
-    packages: [
-      {
-        name: "VIDEO FILM",
-        price: "850€",
-        features: [
-          "Vidéo entre 30 et 80 minutes",
-          "Des préparatifs jusqu'à la pièce montée",
-          "Vidéo stabilisée Haute définition",
-          "Montage studio professionnel (3 jours)",
-        ]
-      },
-      {
-        name: "VIDEO CLIP Teaser",
-        price: "500€",
-        features: [
-          "Vidéo entre 5 et 10 minutes",
-          "Des préparatifs jusqu'à la pièce montée",
-          "Vidéo stabilisée Haute définition",
-          "Montage studio professionnel (1 jour)",
-        ]
-      }
-    ]
-  },
+  }
 ];
 
 export const ServicesWithPricing = () => {
